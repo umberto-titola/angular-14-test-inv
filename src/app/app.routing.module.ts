@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { HomeResolver } from './home/home.resolver';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   {
     path: 'home',
     component: HomeComponent,
+    resolve:{data:HomeResolver}
   },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
-const isIframe = window !== window.parent && !window.opener;
 
 @NgModule({
   imports: [
@@ -20,5 +21,6 @@ const isIframe = window !== window.parent && !window.opener;
     }),
   ],
   exports: [RouterModule],
+  providers:[HomeResolver]
 })
 export class AppRoutingModule {}

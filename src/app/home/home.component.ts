@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Domande } from '../interfaces/domande.interface';
 import { DomandeService } from '../services/domande.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +10,9 @@ import { DomandeService } from '../services/domande.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  constructor(private domandeService: DomandeService) {}
+  constructor(private route:ActivatedRoute) {}
   domande: Domande[] = null;
   ngOnInit() {
-    console.log('init');
-    this.domandeService.get().subscribe((e) => {
-      console.log(e);
-      this.domande = e;
-    });
+    this.domande = this.route.snapshot.data?.['data'];
   }
 }
