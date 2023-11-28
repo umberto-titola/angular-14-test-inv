@@ -20,7 +20,7 @@
           {{domanda?.idImpresa == tipologieImpresa.impresaEstera ? 'Impresa estera' : 'Impresa italiana'}}
         </td>
         <td >
-          <a   [routerLink]="['/dettaglio/1']">
+          <a   [routerLink]="['/dettaglio/'+domanda?.id]">
           <svg 
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -40,3 +40,5 @@
     </ng-container>
   </tbody>
 </table>
+
+<button type="button"  [routerLink]="['/dettaglio/0']" class="btn btn-success me-2">Nuova domanda</button>

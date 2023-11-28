@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, of, tap } from 'rxjs';
 import { Domande } from '../interfaces/domande.interface';
@@ -7,7 +7,9 @@ import { Domande } from '../interfaces/domande.interface';
 export class DomandeService {
   constructor(private http: HttpClient) {}
   private domandeUrl = 'api/domande';
-
+   httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
   get(): Observable<Domande[]> {
     return this.http.get<Domande[]>(this.domandeUrl);
   }
@@ -20,10 +22,20 @@ export class DomandeService {
     );
   }
   /** PUT: update the hero on the server */
-  updateHero(domanda: Domande): Observable<any> {
-    return this.http.put(this.domandeUrl, domanda).pipe(
+  update(domanda: Domande): Observable<any> {
+
+    const url = `${this.domandeUrl}/${domanda.id}`;
+    return this.http.put(url, domanda,this.httpOptions).pipe(
       tap(_ => console.log(`updated domanada id=${domanda.id}`)),
       catchError(this.handleError<any>('updateDomanda'))
+    );
+  }
+
+  post(domanda: Domande): Observable<any> {
+    const url = `${this.domandeUrl}`;
+    return this.http.post(url, domanda,this.httpOptions).pipe(
+      tap(_ => console.log(`post domanada id=${domanda.id}`)),
+      catchError(this.handleError<any>('postDomanda'))
     );
   }
 

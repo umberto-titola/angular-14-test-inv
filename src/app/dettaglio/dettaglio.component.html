@@ -7,3 +7,12 @@
     <option [value]="tipologiaImpresa.id" *ngFor="let tipologiaImpresa of tipologieImpresa ">{{tipologiaImpresa.descrizione}}</option>
   </select>
 </form>
+<div class="d-flex align-items-center justify-content-center">
+  <button type="button" (click)="onSubmit()" class="btn btn-success me-2" [disabled]="form?.invalid">Invia</button>
+  <button type="button" routerLink="home" class="btn btn-danger" >Annulla</button>
+</div>
+
+<div class="alert alert-success mt-4" *ngIf="msg">
+  {{msg}}
+</div>
+

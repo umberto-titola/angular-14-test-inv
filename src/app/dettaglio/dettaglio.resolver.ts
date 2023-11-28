@@ -11,9 +11,10 @@ export class DettaglioResolver implements Resolve<Observable<any>> {
 
   resolve(route:ActivatedRouteSnapshot): Observable<any>  {
     let id = route.params?.['id'];
+    console.log(id);
     return forkJoin([
       this.tipologicheService.getTipologieImpresa(),
-      id ?  this.domandeService.geById(id) : of(null)
+      +id ?  this.domandeService.geById(id) : of(false)
     ]);
   }
 }
