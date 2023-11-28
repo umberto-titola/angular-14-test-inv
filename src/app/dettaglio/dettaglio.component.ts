@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Domande } from '../interfaces/domande.interface';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { DomandeService } from '../services/domande.service';
 import { Subscription } from 'rxjs';
 
@@ -19,13 +19,12 @@ export class DettaglioComponent {
   msg = '';
   form = this.fb.group({
     id:[],
-    descrizione:[],
-    idImpresa:[]
+    descrizione:['',[Validators.required]],
+    idImpresa:['',[Validators.required]]
   })
 
   ngOnInit() {
     [this.tipologieImpresa,this.domanda] = this.route.snapshot.data?.['data'];
-    console.log(this.domanda);
     this.form.patchValue(this.domanda);
   }
 

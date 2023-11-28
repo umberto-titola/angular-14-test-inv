@@ -1,7 +1,7 @@
 import { Select } from "./select.interface";
 
 export interface Domande {
-  id: number;
-  descrizione: string;
-  idImpresa?:number,
+  id?: number;
+  descrizione?: string;
+  idImpresa?:string,
 }
