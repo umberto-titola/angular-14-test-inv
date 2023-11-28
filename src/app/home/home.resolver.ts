@@ -6,9 +6,8 @@ import { Domande } from '../interfaces/domande.interface';
 
 @Injectable()
 export class HomeResolver implements Resolve<Observable<Domande[]>> {
-  constructor(
-    private domandeService: DomandeService,
-  ) {}
+  constructor(private domandeService: DomandeService) {}
+
   resolve(): Observable<Domande[]>  {
     return this.domandeService.get();
   }
