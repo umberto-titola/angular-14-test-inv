@@ -1,0 +1,9 @@
+
+<p class="lead">Dettaglio domanda</p>
+
+<form [formGroup]="form">
+  <input class="form-control" formControlName="descrizione"type="text" placeholder="Descrizione"aria-label="descrizione">
+  <select class="form-select mt-2" formControlName="idImpresa" aria-label="Default select example">
+    <option [value]="tipologiaImpresa.id" *ngFor="let tipologiaImpresa of tipologieImpresa ">{{tipologiaImpresa.descrizione}}</option>
+  </select>
+</form>

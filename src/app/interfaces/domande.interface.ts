@@ -1,5 +1,7 @@
+import { Select } from "./select.interface";
+
 export interface Domande {
   id: number;
-  name: string;
-  impresaEstera: boolean;
+  descrizione: string;
+  idImpresa?:number,
 }
