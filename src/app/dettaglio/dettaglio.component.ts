@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Domande } from '../interfaces/domande.interface';
+import { Domanda } from '../interfaces/domanda.interface';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { DomandeService } from '../services/domande.service';
@@ -16,7 +16,7 @@ export class DettaglioComponent {
   pageSubscription = new Subscription();
   constructor(private route:ActivatedRoute,private fb:FormBuilder,private domandeService:DomandeService) {}
   tipologieImpresa = [];
-  domanda: Domande = null;
+  domanda: Domanda = null;
   msg = '';
   form = this.fb.group({
     id:[],
@@ -27,7 +27,7 @@ export class DettaglioComponent {
 
   ngOnInit() {
     [this.tipologieImpresa,this.domanda] = this.route.snapshot.data?.['data'];
-    
+ 
     this.pageSubscription.add(this.form.get('idImpresa').valueChanges.subscribe((idImpresa)=>{
       if(idImpresa == tipologiaImprea.impresaItaliana){
         this.form.get('indirizzo').setValidators([Validators.required]);
@@ -37,11 +37,12 @@ export class DettaglioComponent {
       }
     }));
 
-    this.form.patchValue(this.domanda);
-
+    if(this.domanda) this.form.patchValue(this.domanda);
+  
   }
 
   onSubmit(){
+    if(this.form.invalid)return;
     let data = this.form.getRawValue();
     let verb = 'update';
     if(!+data?.id){

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Domande } from '../interfaces/domande.interface';
+import { Domanda } from '../interfaces/domanda.interface';
 import { DomandeService } from '../services/domande.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {  tipologiaImprea } from '../interfaces/tipologiaImpresa.interface';
@@ -12,7 +12,7 @@ import {  tipologiaImprea } from '../interfaces/tipologiaImpresa.interface';
 })
 export class HomeComponent {
   constructor(private route:ActivatedRoute,private router:Router) {}
-  domande: Domande[] = null;
+  domande: Domanda[] = null;
   tipologieImpresa = tipologiaImprea;
 
   ngOnInit() {

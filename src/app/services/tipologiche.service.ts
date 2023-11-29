@@ -1,7 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Select } from "../interfaces/select.interface";
-import { tap } from "rxjs";
 
 @Injectable({
     providedIn:'root'
@@ -13,7 +12,7 @@ export class TipologicheService{
     private tipologieImpresaUrl = 'api/tipologieImpresa';
  
     getTipologieImpresa(){
-      return this.http.get<any[]>(this.tipologieImpresaUrl);
+      return this.http.get<Select[]>(this.tipologieImpresaUrl);
     }
 
 }

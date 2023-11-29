@@ -1,6 +1,5 @@
-import { Select } from "./select.interface";
 
-export interface Domande {
+export interface Domanda {
   id?: number;
   descrizione?: string;
   idImpresa?:string,
