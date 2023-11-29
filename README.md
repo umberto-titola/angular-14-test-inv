@@ -8,20 +8,22 @@
 
 * Aggiustare l'applicazione facendo in modo che funzioni
 
-* Far in modo che il componente home con l'icona pencil faccia redirect su dettaglio prendendo i dati dal server (getById).
+* Componente Home
+    * Far in modo che il componente home con l'icona pencil faccia redirect su dettaglio prendendo i dati dal server (getById).
 
-* gestire il redirect per il bottone nuova domanda sapendo che l'id  è 0.
+    * gestire il redirect per il bottone nuova domanda sapendo che l'id  è 0.
 
-* Sul Dettaglio gestire binding al OnInit dei dati provenienti dal server.
+* Componente Dettaglio 
+    * Gestire binding al OnInit dei dati provenienti dal server.
 
-* Fare il binding dei dati della tipologica 
+    * Fare il binding dei dati della tipologica 
 
-* Sul Dettaglio la input indirizzo deve esserre obbligatoria se impresa italiana e invece facoltativa se impresa estera.
+    * La input indirizzo deve esserre obbligatoria se impresa italiana e invece facoltativa se impresa estera.
 
-* Gestire i messaggi di errore quando i campi sono obbligatori.
+    * Gestire i messaggi di errore quando i campi sono obbligatori.
 
-* Sul Dettaglio Gestire La creazione e modifica per inviare i dati al server solo quando la form è valida riferimento al file domanda.service.ts.
+    * Gestire La creazione e modifica per inviare i dati al server solo quando la form è valida riferimento al file domanda.service.ts.
 
-* gestire gli observable per prevenire la perdita di memoria.
+    * gestire gli observable per prevenire la perdita di memoria.
 
 
