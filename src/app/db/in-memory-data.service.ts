@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { tipologiaImprea } from '../interfaces/tipologiaImpresa.interface';
+import { tipologiaImpresa } from '../interfaces/tipologiaImpresa.interface';
 import { Domanda } from '../interfaces/domanda.interface';
 
 @Injectable({
@@ -9,8 +9,8 @@ import { Domanda } from '../interfaces/domanda.interface';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const domande = [
-      { id: 1, descrizione: 'Domanda1',idImpresa:tipologiaImprea.impresaEstera},
-      { id: 2, descrizione: 'Domanda2',idImpresa:tipologiaImprea.impresaItaliana,indirizzo:'Via di test'},
+      { id: 1, descrizione: 'Domanda1',idImpresa:tipologiaImpresa.impresaEstera},
+      { id: 2, descrizione: 'Domanda2',idImpresa:tipologiaImpresa.impresaItaliana,indirizzo:'Via di test'},
     ];
     const tipologieImpresa = [
       {id:1,descrizione:'Impresa estera'},
@@ -18,7 +18,6 @@ export class InMemoryDataService implements InMemoryDbService {
     ]
     return { domande,tipologieImpresa };
   }
-
 
   genId(domande: Domanda[]): number {
     return domande.length > 0

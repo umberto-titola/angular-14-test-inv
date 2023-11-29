@@ -25,7 +25,7 @@
 
     * Gestire i messaggi di errore quando i campi sono obbligatori.
 
-    * Gestire La creazione e modifica per inviare i dati al server solo quando la form è valida riferimento al file domanda.service.ts.
+    * Gestire La creazione e modifica per inviare i dati al server solo quando la form è valida riferimento al file domande.service.ts.
 
     * gestire gli observable per prevenire la perdita di memoria.
 

@@ -1,6 +1,5 @@
-export enum tipologiaImprea{
+export enum tipologiaImpresa{
     impresaEstera ="1",
     impresaItaliana="2"
 }
 
-export type impresa = tipologiaImprea;

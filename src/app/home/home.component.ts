@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Domanda } from '../interfaces/domanda.interface';
 import { DomandeService } from '../services/domande.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import {  tipologiaImprea } from '../interfaces/tipologiaImpresa.interface';
+import {  tipologiaImpresa } from '../interfaces/tipologiaImpresa.interface';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +13,7 @@ import {  tipologiaImprea } from '../interfaces/tipologiaImpresa.interface';
 export class HomeComponent {
   constructor(private route:ActivatedRoute,private router:Router) {}
   domande: Domanda[] = null;
-  tipologieImpresa = tipologiaImprea;
+  tipologieImpresa = tipologiaImpresa;
 
   ngOnInit() {
    this.domande = this.route.snapshot.data?.['data'];
