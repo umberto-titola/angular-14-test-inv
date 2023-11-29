@@ -8,7 +8,7 @@ import { tipologiaImprea } from '../interfaces/tipologiaImpresa.interface';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const domande = [
-      { id: 1, descrizione: 'Domanda1',idImpresa:tipologiaImprea.impresaEstera },
+      { id: 1, descrizione: 'Domanda1',idImpresa:tipologiaImprea.impresaEstera,indirizzo:'via di test' },
       { id: 2, descrizione: 'Domanda2',idImpresa:tipologiaImprea.impresaItaliana  },
       { id: 3, descrizione: 'Domanda3',idImpresa:tipologiaImprea.impresaItaliana  },
       { id: 4, descrizione: 'Domanda4',idImpresa:tipologiaImprea.impresaItaliana  },

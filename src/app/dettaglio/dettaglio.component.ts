@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { DomandeService } from '../services/domande.service';
 import { Subscription } from 'rxjs';
+import { tipologiaImprea } from '../interfaces/tipologiaImpresa.interface';
 
 @Component({
   selector: 'app-dettaglio',
@@ -20,12 +21,24 @@ export class DettaglioComponent {
   form = this.fb.group({
     id:[],
     descrizione:['',[Validators.required]],
-    idImpresa:['',[Validators.required]]
+    idImpresa:['',[Validators.required]],
+    indirizzo:['',[]]
   })
 
   ngOnInit() {
     [this.tipologieImpresa,this.domanda] = this.route.snapshot.data?.['data'];
+    
+    this.pageSubscription.add(this.form.get('idImpresa').valueChanges.subscribe((idImpresa)=>{
+      if(idImpresa == tipologiaImprea.impresaItaliana){
+        this.form.get('indirizzo').setValidators([Validators.required]);
+        this.form.get('indirizzo').updateValueAndValidity()
+      }else{
+        this.form.get('indirizzo').setErrors(null);
+      }
+    }));
+
     this.form.patchValue(this.domanda);
+
   }
 
   onSubmit(){

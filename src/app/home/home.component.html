@@ -9,6 +9,7 @@
       <!-- <th scope="col">id</th> -->
       <th scope="col">Descrizione</th>
       <th scope="col">Tipologia impresa</th>
+      <th scope="col">Indirizzo</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -18,6 +19,9 @@
         <td>{{ domanda?.descrizione }}</td>
         <td>
           {{domanda?.idImpresa == tipologieImpresa.impresaEstera ? 'Impresa estera' : 'Impresa italiana'}}
+        </td>
+        <td>
+          {{domanda?.indirizzo}}
         </td>
         <td >
           <a   [routerLink]="['/dettaglio/'+domanda?.id]">

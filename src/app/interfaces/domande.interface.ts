@@ -4,4 +4,5 @@ export interface Domande {
   id?: number;
   descrizione?: string;
   idImpresa?:string,
+  indirizzo?:string
 }
