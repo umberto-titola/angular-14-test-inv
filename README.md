@@ -12,13 +12,15 @@
 
 * gestire il redirect per il bottone nuova domanda sapendo che l'id  è 0.
 
-* Nel dettaglio la input indirizzo deve esserre obbligatoria se impresa italiana e invece facoltativa se impresa estera.
+* Sul Dettaglio gestire binding al OnInit dei dati provenienti dal server.
+
+* Fare il binding dei dati della tipologica 
+
+* Sul Dettaglio la input indirizzo deve esserre obbligatoria se impresa italiana e invece facoltativa se impresa estera.
 
 * Gestire i messaggi di errore quando i campi sono obbligatori.
 
-* Sul Dettaglio gestire binding al OnInit dei dati provenienti dal server.
-
-* Gestire La creazione e modifica per inviare i dati al server solo quando la form è valida riferimento al file domanda.service.ts.
+* Sul Dettaglio Gestire La creazione e modifica per inviare i dati al server solo quando la form è valida riferimento al file domanda.service.ts.
 
 * gestire gli observable per prevenire la perdita di memoria.
 
