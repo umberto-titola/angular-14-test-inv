@@ -6,10 +6,13 @@
 ## Test invitalia
 
 
-* Aggiustare l'applicazione facendo in modo che funzioni
+  * Aggiustare l'applicazione facendo in modo che funzioni,
+  controlla il componente Home, e app.module.
 
 * Componente Home
-    * Far in modo che il componente home con l'icona pencil faccia redirect su dettaglio prendendo i dati dal server (getById).
+  
+    * Far in modo che il 
+    componente home con l'icona pencil faccia redirect su dettaglio prendendo i dati dal server (getById).
 
     * gestire il redirect per il bottone nuova domanda sapendo che l'id  è 0.
 
