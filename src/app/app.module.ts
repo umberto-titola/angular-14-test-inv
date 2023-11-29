@@ -14,7 +14,6 @@ import { SharedModule } from './shared.module';
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,

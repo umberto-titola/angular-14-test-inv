@@ -12,11 +12,6 @@ const routes: Routes = [
     component: HomeComponent,
     resolve:{data:HomeResolver}
   },
-  {
-    path:'dettaglio/:id',
-    component:DettaglioComponent,
-    resolve:{data:DettaglioResolver}
-  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

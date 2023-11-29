@@ -10,8 +10,6 @@ export class HomeResolver implements Resolve<Observable<Domanda[]>> {
   constructor(private domandeService: DomandeService,private tipologiche:TipologicheService) {}
 
   resolve(): Observable<Domanda[]>  {
-
     return  this.domandeService.get()
-
   }
 }

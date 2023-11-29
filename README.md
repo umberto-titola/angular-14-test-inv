@@ -7,19 +7,19 @@
 
 
 
-*  Aggiustare l'applicazione facendo in modo che funzioni
+* Aggiustare l'applicazione facendo in modo che funzioni
 
-* Far in modo che il componente home faccia redirect su dettaglio prendendo i dati dal server (getById)
+* Far in modo che il componente home con l'icona pencil faccia redirect su dettaglio prendendo i dati dal server (getById).
 
-* Allineare al centro il bottone nuova domanda usando le classi di bootstrap 5
+* gestire il redirect per il bottone nuova domanda sapendo  che l'id  è 0.
 
-* Nel dettaglio la input indirizzo deve esserre obbligatoria se impresa italiana invece facoltativa se impresa estera
+* Nel dettaglio la input indirizzo deve esserre obbligatoria se impresa italiana e invece facoltativa se impresa estera.
 
-* Gestire la creazione di una nuova domanda sapendo che l'id per creare una nuova domanda è 0
+* Gestire i messaggi di errore quando i campi sono obbligatori.
 
-* Gestire i messaggi di errore con testo rosso usando la classe di bootstrap 5
+* Gestire binding al OnInit dei dati provenienti dal server, mandare la chiamata post per inviare i dati al server in modo che la form di dettaglio mandi la post al server solo quando la form è valida.
+Sapendo che la put è per la modifica e la post per la creazione di una nuova domanda facendo riferimento al file DomandeService
 
-* Allineare al centro i bottoni di invio e annulla domanda facendo in modo che non siano attaccati
+* gestire gli observable per prevenire la perdita di memoria
 
-* Fare in modo che la form di dettaglio mandi la post al server solo quando la form è valida
 

@@ -11,10 +11,10 @@ export class DettaglioResolver implements Resolve<Observable<[Select[],Domanda]>
   constructor(private domandeService: DomandeService,private tipologicheService:TipologicheService) {}
 
   resolve(route:ActivatedRouteSnapshot): Observable<[Select[],Domanda]>  {
-    let id = route.params?.['id'];
+    let id = 1;
     return forkJoin([
       this.tipologicheService.getTipologieImpresa(),
-      +id ?  this.domandeService.geById(id) : of(null)
+      this.domandeService.geById(id)
     ]);
   }
 }

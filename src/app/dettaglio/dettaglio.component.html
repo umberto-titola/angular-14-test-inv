@@ -1,20 +1,17 @@
 
 <p class="lead">Dettaglio domanda</p>
 
-<form [formGroup]="form">
+<form >
   <input class="form-control" formControlName="descrizione"type="text" placeholder="Descrizione"aria-label="descrizione">
-  <div class="text-danger" *ngIf="form.get('descrizione').errors?.['required']">Il campo è obbligatorio</div>
 
   <select class="form-select mt-2" formControlName="idImpresa" aria-label="Default select example">
     <option [value]="tipologiaImpresa.id" *ngFor="let tipologiaImpresa of tipologieImpresa ">{{tipologiaImpresa.descrizione}}</option>
   </select>
-  <div  class="text-danger" *ngIf="form.get('idImpresa').errors?.['required']">Il campo è obbligatorio</div>
 
   <input class="form-control mt-2" formControlName="indirizzo"type="text" placeholder="indirizzo"aria-label="indirizzo">
-  <div  class="text-danger" *ngIf="form.get('indirizzo').errors?.['required']">Il campo è obbligatorio</div>
 </form>
 <div class="d-flex align-items-center justify-content-center">
-  <button type="button" (click)="onSubmit()" [disabled]="form.invalid" class="btn btn-success me-2">Invia</button>
+  <button type="button" (click)="onSubmit()" class="btn btn-success me-2">Invia</button>
   <button type="button" routerLink="home" class="btn btn-danger" >Annulla</button>
 </div>
 
